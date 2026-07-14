@@ -71,3 +71,10 @@ Once connected, it stays running and will auto-reply to incoming messages using 
 - To stop the agent, close the Command Prompt window or press `Ctrl+C`.
 - To swap in a different AI model later (OpenAI, Claude API, etc.), you only need to edit the `getAIReply` function in `index.js`.
 - **Windows sleep mode**: if your PC goes to sleep, the agent stops responding until it wakes up. Go to Settings → System → Power & battery and turn off sleep (or set it to a long time) if you want this running 24/7.
+
+## New features
+
+- **Voice notes** — if someone sends a voice message, it's automatically transcribed (using Groq's free Whisper model) and replied to just like a text message. The transcript is logged in your terminal too.
+- **Image understanding** — if someone sends a photo, the AI actually looks at it (using a vision-capable model) and replies naturally about what it sees, taking any caption into account.
+- **Typing delay** — replies now wait a short, natural amount of time (scaling with reply length) before sending, instead of firing back instantly.
+- **Emoji reactions** — for short, casual messages like "thanks," "ok," or "haha," the bot sometimes reacts with just an emoji instead of typing a full reply — control how often with `EMOJI_REACTION_CHANCE` in `.env` (0 = never, 1 = always, default 0.5).
