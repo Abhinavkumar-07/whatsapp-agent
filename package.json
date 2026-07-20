@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "node --test test/**/*.test.js",
+   "test": "node --test test/",
     "lint": "eslint src/ test/",
     "lint:fix": "eslint src/ test/ --fix",
     "format": "prettier --write src/ test/ index.js",
